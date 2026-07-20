@@ -1,58 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="fish.css">
     <meta charset="UTF-8">
     <title>Fishing Planet Wiki</title>
-    <style>
-        body { font-family: sans-serif; background: #fff; color: #202122; padding: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-        
-        .fish-card { border: 1px solid #a2a9b1; padding: 10px; background: #f8f9fa; text-align: center; }
-        .fish-card img { width: 100%; height: 140px; object-fit: cover; border: 1px solid #ccc; }
-        .fish-card h2 { font-size: 1.1em; color: #0645ad; margin: 10px 0; }
-        
-        details { cursor: pointer; margin-top: 10px; border-top: 1px solid #ccc; padding-top: 10px; text-align: left; }
-        summary { font-weight: bold; color: #0645ad; }
-    </style>
+    <link rel="stylesheet" href="fish.css">
 </head>
 <body>
 
 <h1>All Fish Species</h1>
 
 <div class="grid">
-    <!-- Largemouth Bass -->
+    <!-- PIEMĒRS ZIVIJ (Kopē šo bloku katrai zivij) -->
     <div class="fish-card">
         <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/largemouth-bass.jpg" alt="Largemouth Bass">
         <h2>Largemouth Bass</h2>
+        
         <details>
-            <summary>View Details</summary>
-            <p><strong>Lures:</strong> Spinnerbait</p>
-            <p><strong>Baits:</strong> Shiners</p>
+            <summary>Skatīt datu lapu</summary>
+            <div class="info-grid">
+                <div class="info-item"><strong>Most used baits:</strong> Šiners, tārpi</div>
+                <div class="info-item"><strong>Most used boilies and pellets:</strong> -</div>
+                <div class="info-item"><strong>Most used lure types:</strong> Spinnerbait, Topwater</div>
+                <div class="info-item"><strong>Most used lures:</strong> -</div>
+                <div class="info-item"><strong>Most used hooks:</strong> #1/0 - #4/0</div>
+                <div class="info-item"><strong>Baits:</strong> -</div>
+                <div class="info-item"><strong>Lure types:</strong> -</div>
+            </div>
         </details>
     </div>
-
-    <!-- Bluegill -->
-    <div class="fish-card">
-        <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/bluegill.jpg" alt="Bluegill">
-        <h2>Bluegill</h2>
-        <details>
-            <summary>View Details</summary>
-            <p><strong>Lures:</strong> Small Spoon</p>
-            <p><strong>Baits:</strong> Worms</p>
-        </details>
-    </div>
-
-    <!-- Channel Catfish -->
-    <div class="fish-card">
-        <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/channel-catfish.jpg" alt="Channel Catfish">
-        <h2>Channel Catfish</h2>
-        <details>
-            <summary>View Details</summary>
-            <p><strong>Lures:</strong> Crankbait</p>
-            <p><strong>Baits:</strong> Cutbait</p>
-        </details>
-    </div>
+    <!-- BEIGAS -->
 </div>
 
 </body>

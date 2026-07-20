@@ -1,0 +1,69 @@
+/* Wiki stila bāze */
+body {
+    font-family: sans-serif;
+    background-color: #ffffff;
+    color: #202122;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Virsraksts */
+h1 {
+    border-bottom: 2px solid #a2a9b1;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* Režģis */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Kartiņa */
+.fish-card {
+    border: 1px solid #a2a9b1;
+    padding: 12px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.fish-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.fish-card h2 {
+    font-size: 1.1em;
+    color: #0645ad; /* Vikipēdijas zila krāsa */
+    margin: 10px 0;
+}
+
+/* Details/Summary (Wiki "izvēršamās" sadaļas) */
+details {
+    cursor: pointer;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+summary {
+    font-weight: bold;
+    color: #0645ad;
+    list-style: none; /* Noņem bultiņu */
+}
+
+summary::before {
+    content: "▶ "; /* Pievieno bultiņu */
+    font-size: 0.8em;
+}
+
+details[open] summary::before {
+    content: "▼ ";
+}

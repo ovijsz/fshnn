@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fishing Planet - All Fish Database</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+    <nav class="navbar"><a href="index.html" class="nav-link">Back Home</a></nav>
+    
+    <div class="container">
+        <h1>All Fish Species</h1>
+        <input type="text" id="fishSearch" placeholder="Search for any fish..." onkeyup="filterFish()">
+        
+        <div id="all-fish-grid" class="grid-inner">
+            <p>Loading all fish data...</p>
+        </div>
+    </div>
+
+    <script>
+        const files = [
+            'trip_planner/alaska.csv', 'trip_planner/blue.csv', 'trip_planner/bolivia.csv',
+            'trip_planner/emeraldlake.csv', 'trip_planner/everglades.csv', 'trip_planner/falconlake.csv',
+            'trip_planner/lonestarlake.csv', 'trip_planner/mudwaterriver.csv', 'trip_planner/neherrinriver.csv',
+            'trip_planner/norway.csv', 'trip_planner/quanchkinlake.csv', 'trip_planner/rockylake.csv',
+            'trip_planner/saint.csv', 'trip_planner/san.csv', 'trip_planner/whitemooselake.csv'
+        ];
+
+        let allFish = [];
+
+        // Nolasām visus failus
+        files.forEach(file => {
+            Papa.parse(file, {
+                download: true, header: true,
+                complete: function(results) {
+                    results.data.forEach(row => {
+                        // Šeit pielāgo atbilstoši tavai CSV struktūrai (taviem kolonnu nosaukumiem)
+                        if (row['list-card__title']) {
+                            allFish.push(row);
+                        }
+                    });
+                    renderFish(allFish);
+                }
+            });
+        });
+
+        function renderFish(data) {
+            const grid = document.getElementById('all-fish-grid');
+            grid.innerHTML = '';
+            data.forEach(fish => {
+                grid.innerHTML += `
+                    <div class="card">
+                        <img src="${fish['list-card__image src'] || ''}">
+                        <p>${fish['list-card__title']}</p>
+                    </div>`;
+            });
+        }
+
+        function filterFish() {
+            let input = document.getElementById('fishSearch').value.toLowerCase();
+            let filtered = allFish.filter(f => f['list-card__title'].toLowerCase().includes(input));
+            renderFish(filtered);
+        }
+    </script>
+</body>
+</html>

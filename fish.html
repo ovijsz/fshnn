@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <title>Fishing Planet Wiki</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; line-height: 1.5; color: #202122; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
-        .fish-card { border: 1px solid #a2a9b1; padding: 10px; background: #f8f9fa; text-align: center; }
-        .fish-card img { width: 100%; height: 120px; object-fit: cover; }
-        h1 { border-bottom: 2px solid #a2a9b1; }
+        body { font-family: sans-serif; background: #fff; color: #202122; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+        
+        /* Kartiņa un izvēršanās efekts */
+        .fish-card { border: 1px solid #a2a9b1; padding: 10px; background: #f8f9fa; }
+        .fish-card img { width: 100%; height: 140px; object-fit: cover; }
+        
+        /* Wiki "details" stils */
+        details { cursor: pointer; margin-top: 10px; border-top: 1px solid #ccc; padding-top: 10px; }
+        summary { font-weight: bold; color: #0645ad; }
     </style>
 </head>
 <body>
@@ -16,14 +21,28 @@
 <h1>All Fish Species</h1>
 
 <div class="grid">
-    <!-- Šeit tu manuāli ieliec savas zivis. 
-         Tā kā CSV fails netiek nolasīts, šī ir vienīgā metode, kas garantēti nerādīs baltu ekrānu. -->
+    <!-- Šeit ieliec katru zivi no sava CSV faila šādā formātā: -->
     
     <div class="fish-card">
-        <img src="bilde_url_šeit.jpg" alt="Zivs">
-        <h2>Chosen Fish Name</h2>
-        <p>Lures: ...</p>
-        <p>Baits: ...</p>
+        <img src="https://example.com/bass.jpg" alt="Largemouth Bass">
+        <h2>Largemouth Bass</h2>
+        
+        <details>
+            <summary>View Details</summary>
+            <p><strong>Lures:</strong> Spinnerbait</p>
+            <p><strong>Baits:</strong> Shiners</p>
+        </details>
+    </div>
+
+    <div class="fish-card">
+        <img src="https://example.com/bluegill.jpg" alt="Bluegill">
+        <h2>Bluegill</h2>
+        
+        <details>
+            <summary>View Details</summary>
+            <p><strong>Lures:</strong> Small Spoon</p>
+            <p><strong>Baits:</strong> Worms</p>
+        </details>
     </div>
 </div>
 

@@ -1,20 +1,17 @@
-.fish-card {
-    border: 1px solid #a2a9b1;
-    padding: 15px;
-    background: #f8f9fa;
-}
+body { font-family: sans-serif; background: #fff; color: #202122; padding: 20px; line-height: 1.6; }
+h1 { border-bottom: 2px solid #a2a9b1; padding-bottom: 5px; }
 
-/* Kategoriju stils iekšā details */
-.info-grid {
-    display: grid;
-    gap: 8px;
-    margin-top: 10px;
-    font-size: 0.85em;
-}
+/* Režģis */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
 
-.info-item {
-    border-bottom: 1px solid #e1e1e1;
-    padding-bottom: 4px;
-}
+/* Kartiņa */
+.fish-card { border: 1px solid #a2a9b1; padding: 15px; background: #f8f9fa; }
+.fish-card img { width: 100%; height: 160px; object-fit: cover; border: 1px solid #ccc; }
+.fish-card h2 { font-size: 1.2em; color: #0645ad; margin: 10px 0; }
 
-.info-item strong { color: #555; display: block; }
+/* Kategoriju režģis */
+details { margin-top: 10px; border-top: 1px solid #ccc; padding-top: 10px; cursor: pointer; }
+summary { font-weight: bold; color: #0645ad; font-size: 0.9em; outline: none; }
+.info-grid { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; font-size: 0.85em; }
+.info-item { border-bottom: 1px solid #e1e1e1; padding-bottom: 3px; }
+.info-item strong { color: #333; display: block; }

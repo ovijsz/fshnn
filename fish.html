@@ -1,18 +1,44 @@
-<main id="all-fish-grid" class="locations-grid">
-    <!-- Tiks aizpildīts ar JS -->
-</main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fish Database - Fishing Planet Wiki</title>
+    <style>
+        /* Wiki stila CSS */
+        body { font-family: sans-serif; background: #fff; color: #202122; padding: 20px; line-height: 1.6; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+        
+        /* Kartiņa */
+        .fish-card { border: 1px solid #a2a9b1; padding: 10px; background: #f8f9fa; text-align: center; }
+        .fish-card img { width: 100%; height: 150px; object-fit: contain; }
+        .fish-card h2 { font-size: 1.1em; color: #0645ad; margin: 10px 0; }
+        
+        /* Detaļu sadaļa (parādās uz klikšķi, izmantojot :target) */
+        .details { display: none; margin-top: 20px; border: 1px solid #a2a9b1; padding: 20px; }
+        :target { display: block; }
+    </style>
+</head>
+<body>
 
-<script>
-function renderFish(data) {
-    const grid = document.getElementById('all-fish-grid');
-    grid.innerHTML = '';
-    data.forEach(fish => {
-        // Rādām tikai vārdu un bildi
-        grid.innerHTML += `
-            <div class="main-card" onclick="openFishDetails('${fish['Chosen Fish']}', '${fish['Image URL']}')">
-                <img src="${fish['Image URL']}">
-                <h2 class="loc-name">${fish['Chosen Fish']}</h2>
-            </div>`;
-    });
-}
-</script>
+<h1>All Fish Species</h1>
+
+<!-- Meklētājs (bez JS darbojas tikai tad, ja pārslēdz lapas) -->
+<input type="text" placeholder="Meklēt zivi...">
+
+<div class="grid">
+    <!-- Piemērs vienai zivij -->
+    <div class="fish-card">
+        <img src="bilde.jpg" alt="Zivs">
+        <h2><a href="#zivs1">Chosen Fish Name</a></h2>
+    </div>
+</div>
+
+<!-- Detaļu skats (kas atveras) -->
+<div id="zivs1" class="details">
+    <h2>Chosen Fish Name</h2>
+    <p>Šeit ir informācija par Lures, Baits utt.</p>
+    <a href="#">Aizvērt</a>
+</div>
+
+</body>
+</html>

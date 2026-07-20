@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fishing Planet Norway Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Fishing Planet: Norway Gear Planner</h1>
+    <p>Automated database for Skårsvåg Fjord, Norway</p>
+</header>
+
+<main id="planner-container"></main>
+
+<script>
+    Papa.parse("norway.csv", {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+            const container = document.getElementById('planner-container');
+            results.data.forEach(row => {
+                if (row.section__heading && row.section__heading.trim() !== "") {
+                    let sectionHTML = `<section class="category"><h2>${row.section__heading}</h2><div class="grid">`;
+                    for (let i = 1; i <= 25; i++) {
+                        let titleKey = (i === 1) ? 'list-card__title' : `list-card__title ${i}`;
+                        let imgKey = (i === 1) ? 'list-card__image src' : `list-card__image src ${i}`;
+                        let levelKey = (i === 1) ? 'list-card__level' : `list-card__level ${i}`;
+                        
+                        if (row[titleKey] && row[titleKey].trim() !== "") {
+                            let level = row[levelKey] ? `<span class="level-badge">LvL ${row[levelKey]}</span>` : '';
+                            sectionHTML += `
+                                <div class="card">
+                                    ${level}
+                                    <img src="${row[imgKey] || 'placeholder.png'}" alt="${row[titleKey]}" loading="lazy">
+                                    <p>${row[titleKey]}</p>
+                                </div>`;
+                        }
+                    }
+                    sectionHTML += `</div></section>`;
+                    container.innerHTML += sectionHTML;
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>

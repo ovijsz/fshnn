@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fishing Planet Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+    <div class="bg-layer"></div>
+    <nav class="navbar">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link">Fish Species</a>
+    </nav>
+    <div class="search-container">
+        <input type="text" id="locationSearch" placeholder="Search locations..." onkeyup="filterLocations()">
+    </div>
+    
+    <h1><center>AMERICA</center></h1>
+    <!-- SĀKUMS: Viss vienā gridā -->
+    <div class="locations-grid" id="locations-grid">
+       
+        <!-- Lone Star Lake -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/lonestarlake.csv', 'LONE STAR LAKE')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/lone-star-lake.jpg" alt="Lone Star Lake" onerror="this.src='https://via.placeholder.com/300'">
+            <h2 class="loc-name">Lone Star Lake</h2>
+            <p style="color: #aaa;">Unlocks from level 1</p>
+        </div>
+        
+                <!-- Mudwater River -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/mudwaterriver.csv', 'MUDWATER RIVER')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2026/06/mudwater-river-reworked.jpg" alt="Mudwater River" onerror="this.src='https://via.placeholder.com/300'">
+            <h2 class="loc-name">Mudwater River</h2>
+            <p style="color: #aaa;">Unlocks from level 4</p>
+        </div>
+        
+                        <!-- Emerald Lake -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/mudwaterriver.csv', 'EMERALD LAKE')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/emerald-lake.jpg" alt="Emerald Lake" onerror="this.src='https://via.placeholder.com/300'">
+            <h2 class="loc-name">Emerald Lake</h2>
+            <p style="color: #aaa;">Unlocks from level 8</p>
+        </div>
+        
+          <!-- Rocky Lake -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/rockylake.csv', 'ROCKY LAKE')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/emerald-lake.jpg" alt="Rocky Lake" onerror="this.src='https://via.placeholder.com/300'">
+            <h2 class="loc-name">Rocky Lake</h2>
+            <p style="color: #aaa;">Unlocks from level 8</p>
+        </div>
+        
+         <!-- Neherrin River -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/rockylake.csv', 'NEHERRIN RIVER')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/neherrin-river.jpg" alt="Neherrin River" onerror="this.src='https://via.placeholder.com/300'">
+            <h2 class="loc-name">Neherrin River</h2>
+            <p style="color: #aaa;">Unlocks from level 10</p>
+        </div>
+        
+                 <!-- Falcon Lake -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/falconlake.csv', 'FALCON LAKE')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/falcon-lake.jpg" alt="Falcon Lake" onerror="this.src='https://via.placeholder.com/300'">
+            <h2 class="loc-name">Falcon Lake</h2>
+            <p style="color: #aaa;">Unlocks from level 14</p>
+        </div>
+        
+                         <!-- Everglades -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/everglades.csv', 'EVERGLADES')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/everglades.jpg" alt="Everglades" onerror="this.src='https://via.placeholder.com/300'">
+            <h2 class="loc-name">Everglades</h2>
+            <p style="color: #aaa;">Unlocks from level 18</p>
+        </div>
+        
+        <!-- White Moose Lake -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/whitemooselake.csv', 'WHITE MOOSE LAKE')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/white-moose-lake.jpg" alt="White Moose Lake" onerror="this.src='https://via.placeholder.com/300'">
+            <h2 class="loc-name">White Moose Lake</h2>
+            <p style="color: #aaa;">Unlocks from level 22</p>
+        </div>
+        
+                <!-- Quanchkin Lake -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/quanchkinlake.csv', 'QUANCHKIN LAKE')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/quanchkin-lake.jpg" alt="Quanchkin Lake" onerror="this.src='https://via.placeholder.com/300'">
+            <h2 class="loc-name">Quanchkin Lake</h2>
+            <p style="color: #aaa;">Unlocks from level 26</p>
+        </div>
+        
+         <!-- Saint-Croix Lake -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/saint.csv', 'SAINT-CROIX LAKE')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/saint-croix-lake.jpg" alt="Saint-Croix Lake" onerror="this.src='https://via.placeholder.com/300'">
+            <h2 class="loc-name">Saint-Croix Lake</h2>
+            <p style="color: #aaa;">Unlocks from level 30</p>
+        </div>
+        
+                 <!-- San Joaquin -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/san.csv', 'SAN JOAQUIN DELTA')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/san-joaquin-delta.jpg" alt="San Joaquin Delta" onerror="this.src='https://via.placeholder.com/300'">
+            <h2 class="loc-name">San Joaquin Delta</h2>
+            <p style="color: #aaa;">Unlocks from level 34</p>
+        </div>
+        
+                <!-- Kaniq Creek -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/alaska.csv', 'KANIQ CREEK')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2019/02/kaniq-creek.jpg" alt="San Joaquin Delta" onerror="this.src='https://via.placeholder.com/300'">
+            <h2 class="loc-name">Kaniq Creek</h2>
+            <p style="color: #aaa;">Unlocks from level 38</p>
+        </div>
+        
+                        <!-- Blue Crab Island -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/blue.csv', 'BLUE CRAB ISLAND')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2020/01/blue-crab-island.jpg" alt="Blue Crab Island" onerror="this.src='https://via.placeholder.com/300'">
+            <h2 class="loc-name">Blue Crab Island</h2>
+            <p style="color: #aaa;">Unlocks from level 54</p>
+        </div>
+        
+                        <!-- Skårland Fjord -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/bolivia.csv', 'BOLIVIA')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2020/09/marron-river.jpg" alt="d">
+            <h2 class="loc-name">Marron River</h2>
+            <p style="color: #aaa;">Unlocks from level 63</p>
+        </div>
+        
+        <!-- Skårland Fjord -->
+        <div class="main-card location-card" onclick="openModal('trip_planner/norway.csv', 'SKÅRLAND FJORD')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2025/12/skarland-fjord-1.png" alt="Skårland Fjord">
+            <h2 class="loc-name">Skårland Fjord</h2>
+            <p style="color: #aaa;">Unlocks from level 105</p>
+        </div>
+
+    </div>
+    
+     <div class="locations-grid" id="locations-grid">
+            <h1><center>AMERICA</center></h1>
+                 <div class="main-card location-card" onclick="openModal('trip_planner/norway.csv', 'SKÅRLAND FJORD')">
+            <img src="https://api.fp-collective.com/wp-content/uploads/2025/12/skarland-fjord-1.png" alt="Skårland Fjord">
+            <h2 class="loc-name">Skårland Fjord</h2>
+            <p style="color: #aaa;">Unlocks from level 105</p>
+        </div>
+         
+    </div>
+    <!-- BEIGAS -->
+
+    <div id="fishModal" class="modal">
+        <div class="modal-content">
+            <h1 id="modal-title" style="text-align: center; color: #219ebc;"></h1>
+            <div id="data-grid"></div>
+        </div>
+    </div>
+
+    <script>
+        function filterLocations() {
+            let input = document.getElementById('locationSearch').value.toLowerCase();
+            let cards = document.getElementsByClassName('location-card');
+            for (let card of cards) {
+                let name = card.querySelector('.loc-name').innerText.toLowerCase();
+                card.style.display = name.includes(input) ? "" : "none";
+            }
+        }
+
+        const modal = document.getElementById("fishModal");
+function openModal(csvPath, title) {
+    document.getElementById('modal-title').innerText = title;
+    modal.style.display = "block";
+    const grid = document.getElementById('data-grid');
+    grid.innerHTML = '';
+    
+    Papa.parse(csvPath, {
+        download: true, header: true, skipEmptyLines: true,
+        complete: function(results) {
+            // Grupa datus pēc sadaļām, lai nekas nepazūd
+            let currentSection = null;
+            
+            results.data.forEach(row => {
+                // Ja ir jauna sadaļa, izveidojam jaunu wrapperi
+                if (row.section__heading && row.section__heading.trim() !== "") {
+                    let sectionId = 'sec-' + row.section__heading.replace(/[^a-z0-9]/gi, '-').toLowerCase();
+                    grid.innerHTML += `
+                        <div class="section-wrapper">
+                            <h2 class="section-title">${row.section__heading}</h2>
+                            <div class="grid" id="${sectionId}"></div>
+                        </div>`;
+                    currentSection = document.getElementById(sectionId);
+                }
+
+                // Pievienojam kartiņas, ja sadaļa ir atrasta
+                if (currentSection) {
+                    for (let i = 1; i <= 25; i++) {
+                        let s = (i === 1) ? '' : ` ${i}`;
+                        if (row[`list-card__title${s}`]) {
+                            currentSection.innerHTML += `
+                                <div class="card">
+                                    ${row[`list-card__level${s}`] ? `<span class="level-badge">LvL ${row[`list-card__level${s}`]}</span>` : ''}
+                                    <img src="${row[`list-card__image src${s}`] || 'https://via.placeholder.com/150'}">
+                                    <p style="font-size: 0.9em; margin-top: 10px;">${row[`list-card__title${s}`]}</p>
+                                </div>`;
+                        }
+                    }
+                }
+            });
+        }
+    });
+}
+        window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
+    </script>
+</body>
+</html>

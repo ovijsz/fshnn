@@ -1,0 +1,57 @@
+/* Pamatstili */
+* { box-sizing: border-box; }
+body { 
+    margin: 0; padding: 0; font-family: sans-serif; 
+    background: #050b14; color: #fff; min-height: 100vh; 
+}
+
+/* Fons */
+.bg-layer { 
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80'); 
+    background-size: cover; z-index: -1; 
+}
+
+/* Navigācija */
+.navbar { display: flex; justify-content: center; gap: 30px; padding: 20px; background: rgba(0,0,0,0.4); border-bottom: 1px solid #219ebc; }
+.nav-link { color: #8ecae6; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9em; cursor: pointer; }
+
+/* Search bar */
+.search-container { text-align: center; margin: 30px 0; }
+#locationSearch { width: 350px; padding: 10px; border-radius: 5px; border: 1px solid #219ebc; background: rgba(0,0,0,0.5); color: #fff; text-align: center; }
+
+/* GALVENAIS: Lokāciju grid */
+.locations-grid { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 320px); /* Vienmēr 320px platas kartiņas */
+    justify-content: center; /* Centrējam rindu */
+    gap: 30px; 
+    padding: 20px;
+}
+
+/* Kartiņas stils */
+.main-card { 
+    width: 320px; 
+    background: rgba(10, 20, 35, 0.9); 
+    border: 1px solid #219ebc; 
+    border-radius: 12px; 
+    padding: 15px; 
+    cursor: pointer; 
+    transition: 0.3s; 
+    text-align: center;
+}
+.main-card:hover { transform: scale(1.03); box-shadow: 0 0 15px #219ebc; }
+.main-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
+.main-card h2 { font-size: 1.2em; margin: 15px 0 5px; }
+
+/* Modālais logs */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 100; backdrop-filter: blur(15px); overflow-y: auto; }
+.modal-content { width: 90%; max-width: 1000px; margin: 40px auto; padding: 30px; }
+
+/* Zivju grid iekšā modālajā logā */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; margin-top: 20px; }
+.card { background: rgba(255,255,255,0.03); padding: 10px; border-radius: 8px; text-align: center; border: 1px solid #333; }
+.card img { width: 100%; height: 100px; object-fit: contain; margin-bottom: 5px; }
+.section-title { color: #8ecae6; border-bottom: 1px solid #219ebc; padding-bottom: 5px; margin-top: 30px; font-size: 1.2em; }
+.level-badge { background: #fb8500; padding: 1px 6px; border-radius: 4px; font-size: 0.7em; display: inline-block; }
